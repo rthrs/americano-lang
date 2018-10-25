@@ -22,4 +22,5 @@ Language grammar is defined in bnfc format.
   ./interpreter [--help] [FILES...]
 ```
 `./interpreter` without arguments runs interactive shell.
- 
+Americano programming examples are placed under `good` directory.
+
