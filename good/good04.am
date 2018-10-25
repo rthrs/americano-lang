@@ -1,0 +1,7 @@
+print "-- 04. Konkatenacja napisow ------------------------------------------------";
+
+string s = "Ala " + "ma" + " kota";
+s += "!";
+print s; // Ala ma kota!
+
+print "";

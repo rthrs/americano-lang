@@ -1,0 +1,24 @@
+print "-- 19. Zagniezdzone slowniki -----------------------------------------------";
+
+int {int} {string} dd1 = ({
+  "a": ({
+    0: 0
+  }),
+  "b": ({
+    1: 1
+  })
+});
+
+print dd1{"b"}{1}; // 1
+dd1{"b"}{1} = 42;
+print dd1{"b"}{1}; // 42
+
+bool [] {int} dd2 = ({
+  0: [],
+  1: [true, false]
+});
+
+dd2{0}[2] = true;
+print dd2{0}; // [false, false, true]
+
+print "";

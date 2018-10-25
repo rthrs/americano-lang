@@ -1,0 +1,20 @@
+print "-- 12. Przeslanianie i statyczne wiazanie nazw -----------------------------";
+
+void foo() {
+  int x = 0;
+  
+  void bar() {
+    print x;
+  }
+
+  void baz() {
+    int x = 1;
+    bar();
+  }
+
+  baz();
+}
+
+print foo(); // 0
+
+print "";

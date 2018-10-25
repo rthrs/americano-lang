@@ -1,0 +1,18 @@
+print "-- 15. Spojnosc przekazywania parametrow do i z funkcji --------------------";
+
+int {int} d = ({ 0: 0 });
+string s = "Americano";
+
+int {int} foo(int {int} dd) { return dd; }
+
+string bar(string ss) { return ss; }
+
+int {int} e = foo(d);
+e{0} = 1;
+print d{0}; // 1
+
+string t = bar(s);
+t = "Latte";
+print s; // Americano
+
+print "";

@@ -1,0 +1,4 @@
+// Odwołanie do indeksu spoza tablicy
+
+int [] a = [1, 2];
+a[42]; // IndexError: array index 42 out of range.

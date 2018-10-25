@@ -1,0 +1,17 @@
+print "-- 13. Zagniezdzone funkcje ze statycznym wiazaniem ------------------------";
+
+void wow() {
+  print ":(";
+}
+
+void foo() {
+  void wow() {
+    print "Wow! :D";
+  }
+
+  wow();
+}
+
+foo(); // "Wow! :D"
+
+print "";

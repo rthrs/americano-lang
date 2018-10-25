@@ -1,0 +1,6 @@
+// Dzielenie przez zero
+
+int i = 1;
+i /= 0; // DivByZeroError: division or modulo by zero.
+
+// To samo dla `i %= 0;`

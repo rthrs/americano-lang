@@ -1,0 +1,9 @@
+print "-- 05. Rzutowania miedzy napisami, a liczbami ------------------------------";
+
+string s = toString(42);
+print s; // 42
+
+int i = parseInt("42");
+print i; // 42
+
+print "";

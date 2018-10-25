@@ -1,0 +1,25 @@
+print "-- 17. Tablice -------------------------------------------------------------";
+
+int [] intArray = [];
+intArray[1] = 42;
+print intArray; // [0, 42]
+
+bool [] boolArray = [true];
+boolArray[2] = true;
+print boolArray; // [true, false, true]
+
+string [] stringArray = ["A"];
+stringArray[3] = "B";
+print stringArray; // ["A", "", "", "B"]
+
+int [] [] intMatrix = [[1]];
+intMatrix[4] = [42];
+print intMatrix; // [[1], [], [], [], [42]]
+
+int {int} [] dictArray = [({ 0: 0 })];
+dictArray[5] = ({ 5: 5 });
+print dictArray; // [({ 0: 0 }), ({}), ({}), ({}), ({}), ({ 5: 5 })]
+
+print dictArray[5]{5}; // 5 - wygodny dostęp do wartości
+
+print "";

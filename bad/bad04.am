@@ -1,0 +1,3 @@
+// Wywołanie niezadeklarowanej funkcji
+
+foo(); // FunNameError: function "foo" is not declared.

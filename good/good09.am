@@ -1,0 +1,15 @@
+print "-- 09. Funkcje zwracajace wartosc - silnia iteracyjnie ---------------------";
+
+int fact (int n) {
+  int i = 1;
+  int r = 1;
+  while (i < n+1) {
+    r *= i;
+    i++;
+  }
+  return r;
+}
+
+print fact(7); // 5040
+
+print "";

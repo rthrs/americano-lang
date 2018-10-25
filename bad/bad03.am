@@ -1,0 +1,3 @@
+// Niezadeklarowana zmienna
+
+a; // VarNameError: variable "a" is not in scope.

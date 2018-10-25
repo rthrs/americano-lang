@@ -1,0 +1,23 @@
+print "-- 16. Przekazywanie typów zlozonych (referencje) - odwracanie tablicy -----";
+
+void swap(int [] a, int i, int j) {
+  int tmp = a[i];
+  a[i] = a[j];
+  a[j] = tmp;
+}
+
+void rev(int [] a, int n) {
+  int i = 0;
+  while (i < n / 2) {
+    swap(a, i, n - i -1);
+    i++;
+  }
+}
+
+int [] array = [1, 2, 3];
+int arrayLength = 3;
+rev(array, arrayLength);
+
+print array; // [3, 2, 1]
+
+print "";

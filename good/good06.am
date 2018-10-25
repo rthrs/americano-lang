@@ -1,0 +1,14 @@
+print "-- 06. While - wypisz liczby parzyste do 10 --------------------------------";
+
+int i;
+i = 0;
+
+while (i < 10) {
+  if (i % 2 == 0)
+    print i; 
+  i = i + 1;
+}
+
+print i;
+
+print "";

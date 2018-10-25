@@ -1,0 +1,14 @@
+print "-- 14. Zagniezdzone wyjscia z funkcji --------------------------------------";
+
+int foo() {
+  void bar() {
+    return 0;
+  }
+
+  bar();
+  return 1;
+}
+
+print foo(); // 1
+
+print "";

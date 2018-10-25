@@ -1,0 +1,3 @@
+// Rzutowanie między napisem i liczbą
+
+parseInt("asdf42"); // ParseIntNoParseError: no parse for string "asdf42".

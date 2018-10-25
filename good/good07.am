@@ -1,0 +1,11 @@
+print "-- 07. Continue - wypisz liczby nieparzyste do 9 ---------------------------";
+
+int i = 0;
+
+while (i < 10) {
+  if (i++ % 2 == 1)
+    continue;
+  print i ;
+}
+
+print "";

@@ -1,0 +1,4 @@
+// Odwołanie do nieznanego klucza w słowniku
+
+int {int} d = ({ 0: 0 });
+d{42}; // KeyError: 42.

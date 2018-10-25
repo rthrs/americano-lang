@@ -1,0 +1,6 @@
+// Redundantne nawiasy przy instrukcji print i odwołaniu do klucza słownika
+
+int {int} d = ({0 : 0});
+print a{0};   // OK
+print(a{0} ); // OK
+print(a{0});  // Syntax error

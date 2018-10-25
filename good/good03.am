@@ -1,0 +1,14 @@
+print "-- 03. Printowanie wszystkich typow ----------------------------------------";
+
+print 1;
+print true;
+print false;
+print "I'm a string.";
+print [];
+print [1, 2];
+print [[1], [2]];
+print ({ 0: 0, 2: 0 });
+print ({ 0: ({ "a": true }), 1: ({ "b": false }) });
+print [({ 0: [1,2,3] }), ({ 1: [4,5,6]})];
+
+print "";

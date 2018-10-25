@@ -1,0 +1,190 @@
+-- Programs ------------------------------------------------
+
+entrypoints Program ;
+
+Prog.       Program ::= [Phrase] ;
+
+PDecl.      Phrase ::= Decl ;
+
+PStmt.      Phrase ::= Stmt ;
+
+PExpr.      Phrase ::= Expr ";" ;
+
+PBlock.     Phrase ::= Block ;
+
+Block.      Block ::= "{" [Phrase] "}" ;
+
+separator   Phrase "" ;
+
+-- Declarations --------------------------------------------
+
+DVar.       Decl ::= TypeB [Item] ";" ;
+
+DNoInit.    Item ::= Ident ;
+
+DInit.      Item ::= Ident "=" Expr ;
+
+separator   nonempty Item "," ;
+
+DFun.       Decl ::= TypeB Ident "(" [DArg] ")" Block ;
+
+DArg.       DArg ::= TypeB Ident ;
+
+separator   DArg "," ;
+
+-- Builtin types -------------------------------------------
+
+TComplex.   TypeB ::= TypeC  ;
+
+TPrimitive. TypeB ::= TypeP  ;
+
+internal    Fun. TypeB ::= TypeB "(" [TypeB] ")" ;
+
+separator   TypeB "," ;
+
+-- Primitive types -----------------------------------------
+
+TInt.       TypeP ::= "int" ;
+
+TString.    TypeP ::= "string" ;
+
+TBool.      TypeP ::= "bool" ;
+
+TVoid.      TypeP ::= "void" ;
+
+-- Complex types -------------------------------------------
+
+TArray.     TypeC ::= TypeB "[]" ;
+
+TDict.      TypeC ::= TypeDV "{" TypeDK "}" ;
+
+TDictKey.   TypeDK ::= TypeP ;
+
+TDictVal.   TypeDV ::= TypeB ;
+
+-- Statements ----------------------------------------------
+
+SEmpty.     Stmt ::= ";" ;
+
+SBreak.     Stmt ::= "break" ";" ;
+
+SContinue.  Stmt ::= "continue" ";" ;
+
+SReturn.    Stmt ::= "return" ";" ;
+
+SValReturn. Stmt ::= "return" Expr ";" ;
+
+SCond.      Stmt ::= "if" "(" Expr ")" Phrase  ;
+
+SCondElse.  Stmt ::= "if" "(" Expr ")" Phrase "else" Phrase  ;
+
+SWhile.     Stmt ::= "while" "(" Expr ")" Phrase ;
+
+SPrint.     Stmt ::= "print" Expr1 ";" ;
+
+separator   Stmt "" ;
+
+-- Complex types initialization ----------------------------
+
+-- Without production below, the empty array literal without
+-- any spaces inside (eg. `[];`) cannot be parsed ¯\_(ツ)_/¯
+
+InitArrEmp. CInit ::= "[]" ;
+
+InitArr.    CInit ::= "[" [Expr] "]" ;
+
+InitDict.   CInit ::= "({" [DKeyVal] "})" ;
+
+DictKeyVal. DKeyVal ::= Expr1 ":" Expr1 ;
+
+separator   DKeyVal "," ;
+
+-- Lvalues -------------------------------------------------
+
+LVar.       LVal ::= Ident ;
+
+LArr.       LVal ::= LVal "[" Expr4 "]" ;
+
+LDict.      LVal ::= LVal "{" Expr1 "}" ;
+
+-- Expressions ---------------------------------------------
+
+ELVal.      Expr9 ::= LVal ;
+
+ECInit.     Expr8 ::= CInit ;
+
+EIncr.      Expr8 ::= LVal "++" ;
+
+EDecr.      Expr8 ::= LVal "--" ;
+
+ELitInt.    Expr7 ::= Integer ;
+
+ELitTrue.   Expr7 ::= "true" ;
+
+ELitFalse.  Expr7 ::= "false" ;
+
+ELitString. Expr7 ::= String ;
+
+EApp.       Expr7 ::= Ident "(" [Expr] ")" ;
+
+ENeg.       Expr6 ::= "-" Expr7 ;
+
+ENot.       Expr6 ::= "!" Expr7 ;
+
+EMul.       Expr5 ::= Expr5 MulOp Expr6 ;
+
+EAdd.       Expr4 ::= Expr4 AddOp Expr5 ;
+
+ERel.       Expr3 ::= Expr3 RelOp Expr4 ;
+
+EAnd.       Expr2 ::= Expr3 "&&" Expr2 ;
+
+EOr.        Expr1 ::= Expr2 "||" Expr1 ;
+
+EAss.       Expr ::= LVal AssOp Expr ;
+
+coercions   Expr 9 ;
+
+separator   Expr "," ;
+
+-- Operators -----------------------------------------------
+
+OpPlus.       AddOp ::= "+" ;
+
+OpMinus.      AddOp ::= "-" ;
+
+OpTimes.      MulOp ::= "*" ;
+
+OpDiv.        MulOp ::= "/" ;
+
+OpMod.        MulOp ::= "%" ;
+
+OpLt.         RelOp ::= "<" ;
+
+OpLte.        RelOp ::= "<=" ;
+
+OpGt.         RelOp ::= ">" ;
+
+OpGte.        RelOp ::= ">=" ;
+
+OpEq.         RelOp ::= "==" ;
+
+OpNeq.        RelOp ::= "!=" ;
+
+OpAss.        AssOp ::= "=" ;
+
+OpAssPlus.    AssOp ::= "+=" ;
+
+OpAssMinus.   AssOp ::= "-=" ;
+
+OpAssTimes.   AssOp ::= "*=" ;
+
+OpAssDiv.     AssOp ::= "/=" ;
+
+OpAssMod.     AssOp ::= "%=" ;
+
+-- Comments ------------------------------------------------
+
+comment       "//" ;
+
+comment       "/*" "*/" ;

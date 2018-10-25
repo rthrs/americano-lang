@@ -1,0 +1,10 @@
+print "-- 10. Wyjscie z funkcji z return w nowym bloku ----------------------------";
+
+int foo() {
+  { return 0; }
+  return 1;
+}
+
+print foo(); // 0
+
+print "";

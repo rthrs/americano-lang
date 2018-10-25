@@ -1,0 +1,9 @@
+print "-- 20. Spojnosc przekazywania struktur - inicjalizacja tablic i slownikow --";
+
+int [] a = [1, 2, 3];
+int [] {string} d = ({ "a": a });
+d{"a"}[0] = 0;
+print a; // [0, 2, 3]
+print d; // ({ "a": [0, 2, 3] })
+
+print "";

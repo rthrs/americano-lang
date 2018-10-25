@@ -1,0 +1,13 @@
+__BNFC__
+
+interpreter
+example.am
+
+*.log
+*.aux
+*.hi
+*.o
+*.dvi
+
+Americano/Test.hs
+Americano/Skeleton.hs

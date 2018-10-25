@@ -1,0 +1,3 @@
+// Continue poza pętlą while
+
+continue; // SyntaxError: "continue" outside while loop.

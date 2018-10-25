@@ -1,0 +1,15 @@
+print "-- 18. Slowniki ------------------------------------------------------------";
+
+string {int} d1 = ({ 0: "a" });
+d1{1} = "b";
+print d1; // ({ 0: "a", 1: "b" })
+
+int {bool} d2 = ({ false: 0 });
+d2{true} = 1;
+print d2; // ({ false: 0, true: 1 })
+
+bool {string} d3 = ({ "a": true });
+d3{"b"} = false;
+print d3; // ({ "a": true, "b": false })
+
+print "";

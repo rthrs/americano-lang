@@ -1,0 +1,10 @@
+print "-- 08.  Break - wyjscie z nieskonczonej petli ------------------------------";
+
+while(true) {
+  if(true) {
+      break;
+  }
+  print ":(";
+}
+
+print "Break works!\n";

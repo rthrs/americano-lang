@@ -1,0 +1,3 @@
+// Break poza pętlą while
+
+break; // SyntaxError: "break" outside while loop.
