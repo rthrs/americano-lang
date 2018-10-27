@@ -3,7 +3,7 @@ Monadic interpreter for toy programming language written in Haskell.
 
 Americano is imperative and strongly typed with no implicit type casting. It has C-like syntax and features:
 - `int`, `bool`, `string` and `void` primitive types
-- built-in lists and dictionaries types (combining them also possible)
+- built-in arrays and dictionaries types (combining them also possible)
 - integer arithmetic and side-effects assign operators
 - comparision for both primitive and complex types (python way)
 - `string` concatenation
